@@ -18,7 +18,7 @@ public class Program {
 	public static void main(String[] args) {
 		// set meta information about the game
 		Game.info().setName("WILD WOOD");
-		Game.info().setSubTitle("~ wildes Holz");
+		Game.info().setSubTitle("wildes Holz");
 		Game.info().setVersion("v0.0.1");
 		Game.info().setWebsite("https://github.com/SBSJavatar/LitiGame");
 		Game.info().setDescription("An 2D platformer made in the LITIengine");
