@@ -1,0 +1,17 @@
+Render Loop threw an exception:
+java.lang.NullPointerException
+	at de.gurkenlabs.litiengine.graphics.RenderEngine.lambda$renderEntities$2(RenderEngine.java:217)
+	at java.util.stream.ReferencePipeline$2$1.accept(Unknown Source)
+	at java.util.concurrent.ConcurrentHashMap$ValueSpliterator.forEachRemaining(Unknown Source)
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at de.gurkenlabs.litiengine.graphics.RenderEngine.renderEntities(RenderEngine.java:217)
+	at de.gurkenlabs.litiengine.environment.Environment.render(Environment.java:1233)
+	at de.gurkenlabs.litiengine.environment.Environment.render(Environment.java:1061)
+	at de.gurkenlabs.litiengine.gui.screens.GameScreen.render(GameScreen.java:19)
+	at de.gurkenlabs.litiengine.graphics.RenderComponent.render(RenderComponent.java:157)
+	at de.gurkenlabs.litiengine.RenderLoop.process(RenderLoop.java:25)
+	at de.gurkenlabs.litiengine.UpdateLoop.run(UpdateLoop.java:46)
