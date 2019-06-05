@@ -19,45 +19,49 @@ import de.gurkenlabs.litiengine.physics.GravityForce;
 @AbilityInfo(cooldown = 500, origin = AbilityOrigin.COLLISIONBOX_CENTER, duration = 300, value = 240)
 public class Jump extends Ability {
 
-  public Jump(Creature executor) {
-    super(executor);
+	public Jump(Creature executor) {
+		super(executor);
 
-    this.addEffect(new JumpEffect(this));
-  }
+		this.addEffect(new JumpEffect(this));
+	}
 
-  private class JumpEffect extends ForceEffect {
+	private class JumpEffect extends ForceEffect {
 
-    protected JumpEffect(Ability ability) {
-      super(ability, ability.getAttributes().getValue().getCurrentValue().intValue(), EffectTarget.EXECUTINGENTITY);
-    }
+		protected JumpEffect(Ability ability) {
+			super(ability, ability.getAttributes().getValue().getCurrentValue().intValue(),
+					EffectTarget.EXECUTINGENTITY);
+		}
 
-    @Override
-    protected Force applyForce(IMobileEntity affectedEntity) {
-      // create a new force and apply it to the player
-      GravityForce force = new GravityForce(affectedEntity, this.getStrength(), Direction.UP);
-      affectedEntity.getMovementController().apply(force);
-      return force;
-    }
+		@Override
+		protected Force applyForce(IMobileEntity affectedEntity) {
+			// create a new force and apply it to the player
+			GravityForce force = new GravityForce(affectedEntity, this.getStrength(), Direction.UP);
+			affectedEntity.getMovementController().apply(force);
+			return force;
+		}
 
-    @Override
-    protected boolean hasEnded(final EffectApplication appliance) {
-      return super.hasEnded(appliance) || this.isTouchingCeiling();
-    }
+		@Override
+		protected boolean hasEnded(final EffectApplication appliance) {
+			return super.hasEnded(appliance) || this.isTouchingCeiling();
+		}
 
-    /**
-     * Make sure that the jump is cancelled when the entity touches a static collision box above it.
-     * 
-     * @return True if the entity touches a static collision box above it.
-     */
-    private boolean isTouchingCeiling() {
+		/**
+		 * Make sure that the jump is cancelled when the entity touches a static
+		 * collision box above it.
+		 * 
+		 * @return True if the entity touches a static collision box above it.
+		 */
+		private boolean isTouchingCeiling() {
 
-      Optional<CollisionBox> opt = Game.world().environment().getCollisionBoxes().stream().filter(x -> x.getBoundingBox().intersects(this.getAbility().getExecutor().getBoundingBox())).findFirst();
-      if (!opt.isPresent()) {
-        return false;
-      }
+			Optional<CollisionBox> opt = Game.world().environment().getCollisionBoxes().stream()
+					.filter(x -> x.getBoundingBox().intersects(this.getAbility().getExecutor().getBoundingBox()))
+					.findFirst();
+			if (!opt.isPresent()) {
+				return false;
+			}
 
-      CollisionBox box = opt.get();
-      return box.getCollisionBox().getMaxY() <= this.getAbility().getExecutor().getCollisionBox().getMinY();
-    }
-  }
+			CollisionBox box = opt.get();
+			return box.getCollisionBox().getMaxY() <= this.getAbility().getExecutor().getCollisionBox().getMinY();
+		}
+	}
 }

@@ -8,7 +8,7 @@ import de.gurkenlabs.litiengine.entities.Creature;
 @AnimationInfo(spritePrefix = "jorge")
 public class Jorge extends Creature {
 
-  public Jorge() {
-    this.addController(new EnemyController(this));
-  }
+	public Jorge() {
+		this.addController(new EnemyController(this));
+	}
 }
