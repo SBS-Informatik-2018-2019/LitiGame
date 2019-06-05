@@ -18,11 +18,11 @@ public class Program {
 	 */
 	public static void main(String[] args) {
 		// set meta information about the game
-		Game.info().setName("GURK NUKEM");
-		Game.info().setSubTitle("");
-		Game.info().setVersion("v0.0.2");
-		Game.info().setWebsite("https://github.com/gurkenlabs/litiengine-gurk-nukem");
-		Game.info().setDescription("An example 2D platformer with shooter elements made in the LITIengine");
+		Game.info().setName("WILD WOOD");
+		Game.info().setSubTitle("~ wildes Holz");
+		Game.info().setVersion("v0.0.1");
+		Game.info().setWebsite("https://github.com/SBSJavatar/LitiGame");
+		Game.info().setDescription("An 2D platformer made in the LITIengine");
 
 		// init the game infrastructure
 		Game.init(args);

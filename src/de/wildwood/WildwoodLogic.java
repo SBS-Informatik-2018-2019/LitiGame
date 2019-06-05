@@ -14,7 +14,7 @@ public final class WildwoodLogic {
   }
 
   /**
-   * Initializes the game logic for the GURK NUKEM game.
+   * Initializes the game logic for the Wildwood game.
    */
   public static void init() {
     
