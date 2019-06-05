@@ -1,9 +1,9 @@
 # LitiEngine
-www.litiengine.com/
+https://litiengine.com/
 
-www.github.com/gurkenlabs/litiengine
+https://github.com/gurkenlabs/litiengine
 
 
-www.litiengine.com/getting-started-setup-the-game-project/
+https://litiengine.com/getting-started-setup-the-game-project/
 
-docs.litiengine.com/
+https://docs.litiengine.com/
