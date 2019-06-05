@@ -2,7 +2,7 @@ package de.wildwood;
 
 import java.awt.geom.Rectangle2D;
 
-import com.litiengine.gurknukem.abilities.Jump;
+import de.wildwood.abilities.Jump;
 
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.IUpdateable;
@@ -17,6 +17,8 @@ import de.gurkenlabs.litiengine.physics.Collision;
 @EntityInfo(width = 18, height = 18)
 @MovementInfo(velocity = 70)
 @CollisionInfo(collisionBoxWidth = 8, collisionBoxHeight = 16, collision = true)
+
+
 public class Player extends Creature implements IUpdateable {
 	public static final int MAX_ADDITIONAL_JUMPS = 1;
 

@@ -1,6 +1,6 @@
 package de.wildwood.entities;
 
-import com.litiengine.gurknukem.entities.EnemyController;
+import de.wildwood.entities.EnemyController;
 
 import de.gurkenlabs.litiengine.annotation.AnimationInfo;
 import de.gurkenlabs.litiengine.annotation.EntityInfo;

@@ -1,6 +1,7 @@
 package de.wildwood;
 
-import com.litiengine.gurknukem.entities.Jorge;
+import de.wildwood.entities.Jorge;
+
 
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.entities.Spawnpoint;

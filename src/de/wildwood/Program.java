@@ -1,13 +1,12 @@
 package de.wildwood;
 
-import com.litiengine.gurknukem.screens.IngameScreen;
+import de.wildwood.screens.MainGameScreen;
 
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.resources.Resources;
 
 /**
- * This class provides the main entry point for the LITIengine game "GURK
- * NUKEM".
+ * This class provides the main entry point for the LITIengine game "WILD WOOD".
  */
 public class Program {
 
@@ -39,7 +38,7 @@ public class Program {
 		WildwoodLogic.init();
 
 		// add the screens that will help you organize the different states of your game
-		Game.screens().add(new IngameScreen());
+		Game.screens().add(new MainGameScreen());
 
 		// load the first level (resources for the map were implicitly loaded from the
 		// game file)
