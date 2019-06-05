@@ -15,7 +15,7 @@ public class Program {
 		
 		// set the icon for the game (this has to be done after initialization because
 		// the ScreenManager will not be present otherwise)
-		Game.window().setIconImage(Resources.images().get("icon.png"));
+		Game.window().setIconImage(Resources.images().get("sprites/icon.png"));
 		Game.graphics().setBaseRenderScale(4.001f);
 		
 		// load data from the utiLITI game file
