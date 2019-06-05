@@ -32,7 +32,9 @@ public class Player extends Creature implements IUpdateable {
 		super("gurknukem");
 
 		// setup movement controller
-		this.addController(new PlatformingMovementController<>(this));
+		PlatformingMovementController<Player> pmc = new PlatformingMovementController<>(this);
+		pmc.setJumpKeys(11111111);
+		this.addController(pmc);
 
 		// setup the player's abilities
 		this.jump = new Jump(this);
