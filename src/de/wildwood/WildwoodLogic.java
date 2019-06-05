@@ -1,6 +1,6 @@
 package de.wildwood;
 
-import de.wildwood.entities.Jorge;
+import de.wildwood.entities.Villain;
 
 
 import de.gurkenlabs.litiengine.Game;
@@ -37,6 +37,6 @@ public final class WildwoodLogic {
       }
     });
     
-    CreatureMapObjectLoader.registerCustomCreatureType(Jorge.class);
+    CreatureMapObjectLoader.registerCustomCreatureType(Villain.class);
   }
 }
