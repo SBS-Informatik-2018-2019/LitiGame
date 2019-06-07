@@ -12,6 +12,7 @@ java.lang.NullPointerException
 	at de.gurkenlabs.litiengine.environment.Environment.render(Environment.java:1233)
 	at de.gurkenlabs.litiengine.environment.Environment.render(Environment.java:1061)
 	at de.gurkenlabs.litiengine.gui.screens.GameScreen.render(GameScreen.java:19)
+	at de.wildwood.screens.MenuScreen.render(MenuScreen.java:20)
 	at de.gurkenlabs.litiengine.graphics.RenderComponent.render(RenderComponent.java:157)
 	at de.gurkenlabs.litiengine.RenderLoop.process(RenderLoop.java:25)
 	at de.gurkenlabs.litiengine.UpdateLoop.run(UpdateLoop.java:46)

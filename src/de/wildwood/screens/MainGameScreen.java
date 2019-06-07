@@ -6,7 +6,8 @@ public class MainGameScreen extends GameScreen{
 	public static final String NAME = "INGAME-SCREEN";
 
 	public MainGameScreen() {
-		super(NAME);
+		
 	}
+	
 
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gameinfo>
+ <name>WILD WOOD</name>
+ <subTitle>wildes Holz</subTitle>
+ <description>A game, that was implemented with the LITIengine.</description>
+ <website>https://github.com/SBSJavatar/LitiGame</website>
+ <version>v0.0.1</version>
+ <company>nn</company>
+ <developer>Niklas Beck</developer>
+ <developer>Paul Hollmann</developer>
+</gameinfo>
