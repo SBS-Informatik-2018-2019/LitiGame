@@ -17,6 +17,7 @@ public class MenuLogic {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					Game.screens().remove(menuScreen);
 					Game.screens().display("INGAME-SCREEN");
 					Game.world().loadEnvironment("level1");
 					uninit();
