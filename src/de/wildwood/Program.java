@@ -1,7 +1,6 @@
 package de.wildwood;
 
 import de.wildwood.screens.MainGameScreen;
-import de.wildwood.screens.MenuScreen;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.resources.Resources;
 
@@ -34,16 +33,15 @@ public class Program {
 		WildwoodLogic.init();
 
 		// add the screens that will help you organize the different states of your game
-		Game.screens().add(new MenuScreen());
 		Game.screens().add(new MainGameScreen());
 		
-		Game.screens().display("MENU");
+		Game.screens().display("INGAME-SCREEN");
 		// load the first level (resources for the map were implicitly loaded from the
 		// game file)
 		
-		/*
+
 		Game.world().loadEnvironment("level1");
-		 */
+		
 		
 		
 		Game.start();
