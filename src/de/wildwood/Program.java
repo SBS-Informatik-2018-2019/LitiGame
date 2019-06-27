@@ -1,5 +1,6 @@
 package de.wildwood;
 
+import de.wildwood.GameManager.GameState;
 import de.wildwood.screens.MainGameScreen;
 import de.wildwood.screens.MenuScreen;
 import de.gurkenlabs.litiengine.Game;
@@ -24,9 +25,8 @@ public class Program {
 		Game.screens().add(new MenuScreen());
 		Game.screens().add(new MainGameScreen());
 		
-		Game.screens().display("MENUSCREEN");
+		GameManager.setState(GameState.MENU);
 		
-		//Game.world().loadEnvironment("menu");
 		Game.start();
 
 	}

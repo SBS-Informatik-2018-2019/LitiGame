@@ -1,11 +1,12 @@
 package de.wildwood.screens;
 
 import java.awt.Color;
-import java.awt.Font;
 
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
 import de.gurkenlabs.litiengine.gui.screens.GameScreen;
+import de.wildwood.GameManager;
+import de.wildwood.GameManager.GameState;
 
 public class MenuScreen extends GameScreen {
 	public static final String NAME = "MENUSCREEN";
@@ -31,26 +32,19 @@ public class MenuScreen extends GameScreen {
 
 		this.start = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY, buttonWidth, buttonHeight, null, "Play",
 				null);
-		//this.start.setColor(TEXT_COLOR);
+		//this.start.setTextColor(TEXT_COLOR);
 		//this.start.setHoverTextColor(HOVER_COLOR);
 		//this.start.setFont(buttonFont);
-		//this.start.onClicked(e -> GameManager.setState(GameManager.GameState.MENUHELP));
+		this.start.onClicked(callback -> GameManager.setState(GameState.INGAME));
+		this.start.onHovered(callback -> System.out.println(callback.toString()));
 
 		this.help = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY + buttonHeight + buttonPadding, buttonWidth, buttonHeight, null, "Help", null);
-		//this.help.setTextColor(TEXT_COLOR);
-		//this.help.setHoverTextColor(HOVER_COLOR);
-		//this.help.setFont(buttonFont);
-		//this.help.onClicked(e -> GameManager.setState(GameManager.GameState.MENUHELP));
-
+		
 		this.surprise = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY + (buttonHeight + buttonPadding) * 2.0D, buttonWidth, buttonHeight, null, "Surprise", null);
-		//this.surprise.setTextColor(TEXT_COLOR);
-		//this.surprise.setHoverTextColor(HOVER_COLOR);
-		//this.surprise.setFont(buttonFont);
+		
 
 		this.exit = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY + (buttonHeight + buttonPadding) * 3.0D,buttonWidth, buttonHeight, null, "Exit", null);
-		//this.exit.setTextColor(TEXT_COLOR);
-		//this.exit.setHoverTextColor(HOVER_COLOR);
-		//this.exit.setFont(buttonFont);
+		
 
 		getComponents().add(this.start);
 		getComponents().add(this.help);
