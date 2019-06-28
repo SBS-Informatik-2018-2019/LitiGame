@@ -1,6 +1,7 @@
 package de.wildwood;
 
 import de.gurkenlabs.litiengine.Game;
+import de.wildwood.menu.MenuLogic;
 
 public class GameManager {
 	public enum GameState {
@@ -43,7 +44,7 @@ public class GameManager {
 		Game.screens().display("GAMESCREEN");
 		Game.world().loadEnvironment("level1");
 		state = GameState.INGAME;
-		System.out.println("to" +state.toString());
+		System.out.println("to" +state.toString());//TODO remove
 	}
 	
 	private static void startMenuState(GameState previousState) {
@@ -53,7 +54,7 @@ public class GameManager {
 		MenuLogic.init();
 		Game.screens().display("MENUSCREEN");
 		state = GameState.MENU;
-		System.out.println("to" +state.toString());
+		System.out.println("to" +state.toString());//TODO remove
 	}
 	
 }

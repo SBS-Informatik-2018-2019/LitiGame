@@ -1,4 +1,4 @@
-package de.wildwood;
+package de.wildwood.menu;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -9,7 +9,7 @@ public class MenuInput {
 	private static boolean active;
 	private static KeyListener observer;
 
-	static void init() {
+	public static void init() {
 		if (!active) {
 			observer = new KeyListener() {
 
@@ -33,7 +33,7 @@ public class MenuInput {
 		}
 	}
 
-	static void uninit() {
+	public static void uninit() {
 		if (active) {
 			Input.keyboard().removeKeyListener(observer);
 		}

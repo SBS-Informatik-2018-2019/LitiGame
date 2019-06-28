@@ -5,13 +5,16 @@ import java.awt.Color;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
 import de.gurkenlabs.litiengine.gui.screens.GameScreen;
+import de.gurkenlabs.litiengine.gui.screens.Screen;
+import de.gurkenlabs.litiengine.input.Input;
 import de.wildwood.GameManager;
 import de.wildwood.GameManager.GameState;
 
-public class MenuScreen extends GameScreen {
+public class MenuScreen extends Screen {
 	public static final String NAME = "MENUSCREEN";
 
 	private ImageComponent start;
+	private ImageComponent config;
 	private ImageComponent exit;
 	private ImageComponent help;
 	private ImageComponent surprise;
@@ -20,7 +23,10 @@ public class MenuScreen extends GameScreen {
 		super(NAME);
 	}
 
+	@Override
 	protected void initializeComponents() {
+		// see de.gurkenlabs.litiengine.gui.* for diffrent components
+
 		Color TEXT_COLOR = Color.WHITE;
 		Color HOVER_COLOR = Color.ORANGE;
 
@@ -32,24 +38,25 @@ public class MenuScreen extends GameScreen {
 
 		this.start = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY, buttonWidth, buttonHeight, null, "Play",
 				null);
-		//this.start.setTextColor(TEXT_COLOR);
-		//this.start.setHoverTextColor(HOVER_COLOR);
-		//this.start.setFont(buttonFont);
 		this.start.onClicked(callback -> GameManager.setState(GameState.INGAME));
 		this.start.onHovered(callback -> System.out.println(callback.toString()));
 
-		this.help = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY + buttonHeight + buttonPadding, buttonWidth, buttonHeight, null, "Help", null);
-		
-		this.surprise = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY + (buttonHeight + buttonPadding) * 2.0D, buttonWidth, buttonHeight, null, "Surprise", null);
-		
+		this.config = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY + buttonHeight + buttonPadding,
+				buttonWidth, buttonHeight, null, "Help", null);
+		this.config.onClicked(callback -> System.out.println(callback));
+		this.start.onHovered(callback -> System.out.println(callback));
 
-		this.exit = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY + (buttonHeight + buttonPadding) * 3.0D,buttonWidth, buttonHeight, null, "Exit", null);
-		
+		this.surprise = new ImageComponent(buttonX - buttonWidth / 2.0D,
+				buttonY + (buttonHeight + buttonPadding) * 2.0D, buttonWidth, buttonHeight, null, "Surprise", null);
 
-		getComponents().add(this.start);
-		getComponents().add(this.help);
-		getComponents().add(this.exit);
-		getComponents().add(this.surprise);
+		this.exit = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY + (buttonHeight + buttonPadding) * 3.0D,
+				buttonWidth, buttonHeight, null, "Exit", null);
+
+		this.getComponents().add(this.start);
+		
+		this.getComponents().add(this.config);
+		this.getComponents().add(this.exit);
+		this.getComponents().add(this.surprise);
 	}
 
 }
