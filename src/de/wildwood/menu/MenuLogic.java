@@ -24,7 +24,7 @@ public class MenuLogic {
 		if (keyevent.getKeyCode() == KeyEvent.VK_ENTER) {
 			GameManager.setState(GameState.INGAME);
 		}else if (keyevent.getKeyCode() == KeyEvent.VK_C) {
-			
+			Game.screens().display("CONFIGSCREEN");
 		}
 	}
 	

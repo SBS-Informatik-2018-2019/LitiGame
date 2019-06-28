@@ -42,9 +42,9 @@ public class MenuScreen extends Screen {
 		this.start.onHovered(callback -> System.out.println(callback.toString()));
 
 		this.config = new ImageComponent(buttonX - buttonWidth / 2.0D, buttonY + buttonHeight + buttonPadding,
-				buttonWidth, buttonHeight, null, "Help", null);
-		this.config.onClicked(callback -> System.out.println(callback));
-		this.start.onHovered(callback -> System.out.println(callback));
+				buttonWidth, buttonHeight, null, "CONFIG", null);
+		this.config.onClicked(callback -> Game.screens().display("CONFIGSCREEN"));
+		this.config.onHovered(callback -> System.out.println(callback));
 
 		this.surprise = new ImageComponent(buttonX - buttonWidth / 2.0D,
 				buttonY + (buttonHeight + buttonPadding) * 2.0D, buttonWidth, buttonHeight, null, "Surprise", null);
