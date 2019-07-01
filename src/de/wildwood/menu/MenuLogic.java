@@ -22,7 +22,7 @@ public class MenuLogic {
 
 	static void keyReleased(KeyEvent keyevent) {
 		if (keyevent.getKeyCode() == KeyEvent.VK_ENTER) {
-			GameManager.setState(GameState.INGAME);
+			//GameManager.setState(GameState.INGAME);
 		}else if (keyevent.getKeyCode() == KeyEvent.VK_C) {
 			Game.screens().display("CONFIGSCREEN");
 		}

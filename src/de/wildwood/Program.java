@@ -13,7 +13,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		Game.setInfo("gameinfo.xml");
-		Game.init(args);
+		Game.init();
 		Game.window().setIconImage(Resources.images().get("sprites/icon.png"));
 		//Game.graphics().setBaseRenderScale(4.001f);
 		Game.graphics().setBaseRenderScale(6.001f);
