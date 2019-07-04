@@ -19,7 +19,7 @@ public class Program {
 		Game.graphics().setBaseRenderScale(6.001f);
 		
 		Resources.load("litidata/menu.litidata");
-		Resources.load("game.litidata");
+		Resources.load("litidata/game.litidata");
 		
 		Game.screens().add(new MenuScreen());
 		Game.screens().add(new MainGameScreen());
