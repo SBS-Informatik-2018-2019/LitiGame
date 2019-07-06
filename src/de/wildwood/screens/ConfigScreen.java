@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import de.gurkenlabs.litiengine.Game;
+import de.gurkenlabs.litiengine.gui.CheckBox;
 import de.gurkenlabs.litiengine.gui.GuiComponent;
 import de.gurkenlabs.litiengine.gui.HorizontalSlider;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
@@ -18,7 +19,7 @@ public class ConfigScreen extends Screen {
 	public static final String NAME = "CONFIGSCREEN";
 
 	de.gurkenlabs.litiengine.gui.Menu menu;
-	de.gurkenlabs.litiengine.gui.NumberAdjuster cc;
+	
 
 	TextFieldComponent maxfps;
 	NumberAdjuster maxfps_value;
@@ -30,19 +31,18 @@ public class ConfigScreen extends Screen {
 
 	@Override
 	protected void initializeComponents() {
-		double menuPosX = Game.window().getWidth() / 4;
+		double menuPosX = Game.window().getWidth() / 6;
 		double menuPosY = Game.window().getHeight() / 10;
 
 		ArrayList<ConfigScreen.ConfigComponent> coll = new ArrayList<ConfigScreen.ConfigComponent>();
 
-		coll.add(0, new ConfigComponent("FPS", 0, new NumberAdjuster(0, 0, 0, 0, null, null, 10, 300, 60, 5)));
-		coll.add(1, new ConfigComponent("FPS1", 0, new NumberAdjuster(0, 0, 0, 0, null, null, 10, 300, 60, 5)));
-		coll.add(2, new ConfigComponent("FPS2", 0, new NumberAdjuster(0, 0, 0, 0, null, null, 10, 300, 60, 5)));
+		coll.add(new ConfigComponent("FPS", new TextFieldComponent(0, 0, 0, 0, null, "string")));
+		coll.add(new ConfigComponent("NumberAdju", new NumberAdjuster(0, 0, 0, 0, null, null, 10, 300, 60, 5)));
+		coll.add(new ConfigComponent("CheckBox", new CheckBox(0, 0, 0, 0, null, false)));
 
-		this.menu = new Menu(menuPosX, menuPosY, menuPosX, menuPosY * 8, coll.get(0).toString(), coll.get(1).toString(), coll.get(2).toString(),
-				"...", "...", "...", "...", "...", "...");
+		this.menu = new Menu(menuPosX, menuPosY, menuPosX*2, menuPosY * 8, coll.get(0).toString(), coll.get(1).toString(),coll.get(2).toString());
 		menu.onClicked(callback -> {
-			System.out.println(menu.getCurrentSelection());
+			System.out.println(menu.getCurrentSelection() + " clicked config");
 		});
 
 		/*
@@ -61,8 +61,9 @@ public class ConfigScreen extends Screen {
 		// maxfps_value.setText(Float.toString(maxfps_setting.getCurrentValue())));
 
 		this.getComponents().add(menu);
-		for (ConfigComponent configComponent : coll) {
-			this.getComponents().add(configComponent.getGuiComponent());
+		for (int i = 0; i < coll.size(); i++) {
+			coll.get(i).setup(i, coll.size());
+			this.getComponents().add(coll.get(i).getGuiComponent());
 		}
 
 		// this.getComponents().add(maxfps);
@@ -74,20 +75,31 @@ public class ConfigScreen extends Screen {
 
 	private class ConfigComponent {
 		String displayname;
-		int id;
+		int number;
 		GuiComponent guiComponent;
 
-		public ConfigComponent(String displayname, int id, GuiComponent guiComponent) {
+		public ConfigComponent(String displayname, GuiComponent guiComponent) {
 			this.displayname = displayname;
-			this.id = id;
 			this.guiComponent = guiComponent;
-			guiComponent.setLocation(100, 100);
+			//this.guiComponent.setEnabled(false);
+			//this.guiComponent.setVisible(false);
+
 		}
 
 		@Override
 		public String toString() {
 			return displayname;
 
+		}
+
+		public void setup(int number, int total) {
+			this.number = number;
+			double menuPosX = Game.window().getWidth() / 6;
+			double menuPosY = Game.window().getHeight() / 10;
+			this.guiComponent.setLocation(menuPosX * 3, menuPosY + (menuPosY * 8 / total) * number);
+			this.guiComponent.setDimension(menuPosX*2.5f, menuPosY * 8 / total);
+		
+		
 		}
 
 		public GuiComponent getGuiComponent() {
