@@ -1,8 +1,11 @@
 # Hallo Bekannter
 Hallo meine Freunde,
+
 Niklas und ich wollten mal versuchen ein richtiges 2D Game zu "erschaffen".
 Wer Lust hat "mitzuhelfen" kann sich melden.
+
 Unten Links zum zweiten Repo, sowie zur Dokumentation der Engine, die wir benutzen.
+
 LG Paul
 
 # Extra Repo
