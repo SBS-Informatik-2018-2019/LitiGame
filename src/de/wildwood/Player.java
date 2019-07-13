@@ -3,7 +3,7 @@ package de.wildwood;
 import java.awt.geom.Rectangle2D;
 
 import de.wildwood.abilities.Jump;
-
+import de.wildwood.abilities.Shoot;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.IUpdateable;
 import de.gurkenlabs.litiengine.annotation.Action;
@@ -25,6 +25,8 @@ public class Player extends Creature implements IUpdateable {
 	private static Player instance;
 
 	private final Jump jump;
+	
+	private final Shoot shoot;
 
 	private int consecutiveJumps;
 
@@ -38,6 +40,7 @@ public class Player extends Creature implements IUpdateable {
 		
 		// setup the player's abilities
 		this.jump = new Jump(this);
+		this.shoot = new Shoot(this);
 	}
 
 	public static Player instance() {
@@ -75,6 +78,7 @@ public class Player extends Creature implements IUpdateable {
 		this.jump.cast();
 		this.consecutiveJumps++;
 	}
+	
 
 	private boolean isTouchingGround() {
 		// the idea of this ground check is to extend the current collision box by
@@ -89,5 +93,10 @@ public class Player extends Creature implements IUpdateable {
 		}
 
 		return Game.physics().collides(groundCheck, Collision.STATIC);
+	}
+	
+	public void shoot() {
+	
+		this.shoot.cast();
 	}
 }

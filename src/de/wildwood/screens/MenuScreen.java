@@ -4,9 +4,7 @@ import java.awt.Color;
 
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
-
 import de.gurkenlabs.litiengine.gui.screens.Screen;
-import de.gurkenlabs.litiengine.input.Input;
 import de.wildwood.GameManager;
 import de.wildwood.GameManager.GameState;
 
@@ -16,7 +14,6 @@ public class MenuScreen extends Screen {
 	private ImageComponent start;
 	private ImageComponent config;
 	private ImageComponent exit;
-	private ImageComponent help;
 	private ImageComponent surprise;
 	
 

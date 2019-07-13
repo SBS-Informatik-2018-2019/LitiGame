@@ -1,18 +1,14 @@
 package de.wildwood.screens;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.function.Consumer;
 
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.gui.CheckBox;
+import de.gurkenlabs.litiengine.gui.DropdownListField;
 import de.gurkenlabs.litiengine.gui.GuiComponent;
 import de.gurkenlabs.litiengine.gui.HorizontalSlider;
 import de.gurkenlabs.litiengine.gui.ImageComponent;
-import de.gurkenlabs.litiengine.gui.DropdownListField;
 import de.gurkenlabs.litiengine.gui.NumberAdjuster;
 import de.gurkenlabs.litiengine.gui.TextFieldComponent;
 import de.gurkenlabs.litiengine.gui.screens.Screen;;
