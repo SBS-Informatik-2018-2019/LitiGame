@@ -11,6 +11,9 @@ LG Paul
 # Extra Repo
 - https://github.com/SBS-Informatik-2018-2019/LitiGameExtra
 
+Hier gibts Builds zum Testen, sowie das Mapcreationtool und ein Beispielprojekt zum Zerlegen mit jd gui
+
+
 # LitiEngine
 - https://litiengine.com/
 - https://github.com/gurkenlabs/litiengine
