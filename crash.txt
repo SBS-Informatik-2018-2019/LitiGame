@@ -1,8 +1,0 @@
-main threw an exception:
-java.lang.NullPointerException
-	at de.wildwood.screens.ConfigScreen.initializeComponents(ConfigScreen.java:52)
-	at de.gurkenlabs.litiengine.gui.GuiComponent.<init>(GuiComponent.java:149)
-	at de.gurkenlabs.litiengine.gui.GuiComponent.<init>(GuiComponent.java:89)
-	at de.gurkenlabs.litiengine.gui.screens.Screen.<init>(Screen.java:14)
-	at de.wildwood.screens.ConfigScreen.<init>(ConfigScreen.java:26)
-	at de.wildwood.Program.main(Program.java:26)
