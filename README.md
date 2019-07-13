@@ -1,4 +1,4 @@
-# Hallo Bekannter
+# Hallo (Un)Bekannter
 Hallo meine Freunde,
 
 Niklas und ich wollten mal versuchen ein richtiges 2D Game zu "erschaffen".
